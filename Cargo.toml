@@ -31,9 +31,7 @@ hyper = { version = "0.12", optional = true }
 hyper-tls = { version = "0.3", optional = true }
 native-tls = { version = "0.2", optional = true }
 tokio-core = { version = "0.1", optional = true }
-tokio-io = { version = "0.1", optional = true }
-tokio-uds = { version = "0.2", optional = true }
-websocket = { version = "0.21", optional = true }
+
 
 [dev-dependencies]
 # For examples
@@ -41,11 +39,9 @@ tokio-core = "0.1"
 rustc-hex = "1.0"
 
 [features]
-default = ["http", "ipc", "ws", "tls"]
+default = ["http", "tls"]
 # TODO [ToDr] move transports to separate crates
 http = ["hyper", "tokio-core"]
-ipc = ["tokio-uds", "tokio-core", "tokio-io"]
-ws = ["tokio-core", "websocket"]
 tls = ["hyper-tls", "native-tls"]
 
 [workspace]
