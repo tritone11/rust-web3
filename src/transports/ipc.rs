@@ -75,7 +75,7 @@ impl Ipc {
         P: AsRef<Path>,
     {
         trace!("Connecting to: {:?}", path.as_ref());
-        let stream = UnixStream::connect(path, handle)?;
+        let stream = UnixStream::connect(path).unwrap();
         Self::with_stream(stream, handle)
     }
 
